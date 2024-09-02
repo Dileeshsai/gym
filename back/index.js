@@ -6,11 +6,16 @@ const app = express()
 app.use(cors());
 
 app.use(cors({
-    origin:["https://gym-zmx5.vercel.app/"],
+    origin:["https://gym-zmx5.vercel.app"],
     methods: ["POST","GET"],
     credentials:true
 }
 ));
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://gym-zmx5.vercel.app");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 app.use(express.json())
 mongoose.connect("mongodb+srv://dileeshsai007:GuafBJ2XRl01AV2q@cluster0.4nsg6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 
