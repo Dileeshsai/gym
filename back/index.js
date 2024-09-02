@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 const cors = require("cors")
 const CustomerModel = require("./Customer")
 const app = express()
+app.use(cors());
 app.use(express.json())
 app.use(cors({
     origin:["https://gym-zmx5.vercel.app"],
