@@ -6,7 +6,7 @@ const app = express()
 app.use(cors());
 
 app.use(cors({
-    origin:["https://gym-zmx5.vercel.app"],
+    origin:["https://gym-zmx5.vercel.app/"],
     methods: ["POST","GET"],
     credentials:true
 }
