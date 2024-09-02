@@ -1,13 +1,8 @@
-const express = require("express")
-const mongoose = require("mongoose")
-const cors = require('cors')
-const CustomerModel = require("./Customer")
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require('cors');
+const CustomerModel = require("./Customer");
 const app = express()
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://gym-zmx5.vercel.app");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 app.use(cors({
     origin:["https://gym-zmx5.vercel.app"],
     methods: ["POST","GET"],
