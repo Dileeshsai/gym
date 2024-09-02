@@ -9,6 +9,10 @@ app.use(cors())
 mongoose.connect("mongodb+srv://dileeshsai007:GuafBJ2XRl01AV2q@cluster0.4nsg6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 
 
+
+app.get("/",(req,res)=>{
+    res.json("Hello");
+})
 app.post("/login", (req, res) => {
     const {email, password} = req.body;
   CustomerModel.findOne({email : email})
