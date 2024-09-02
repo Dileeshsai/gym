@@ -1,17 +1,17 @@
 const express = require("express")
 const mongoose = require("mongoose")
-const cors = require("cors")
+const cors = require('cors')
 const CustomerModel = require("./Customer")
 const app = express()
 app.use(cors());
-app.use(express.json())
+
 app.use(cors({
     origin:["https://gym-zmx5.vercel.app"],
     methods: ["POST","GET"],
     credentials:true
 }
 ));
-
+app.use(express.json())
 mongoose.connect("mongodb+srv://dileeshsai007:GuafBJ2XRl01AV2q@cluster0.4nsg6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 
 
